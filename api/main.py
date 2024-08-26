@@ -3,8 +3,16 @@ from pytube import YouTube, Search
 from pydub import AudioSegment
 import os
 import tempfile
+from dotenv import load_dotenv
+
+# Charger les variables d'environnement depuis le fichier .env
+load_dotenv()
 
 app = Flask(__name__)
+
+# Lire la clé API depuis la variable d'environnement
+YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY")
+YOUTUBE_API_URL = "https://www.googleapis.com/youtube/v3/search"
 
 @app.route('/search', methods=['GET'])
 def search_videos():
