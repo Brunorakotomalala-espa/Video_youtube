@@ -3,3 +3,4 @@ requests
 pytube
 pydub
 ffmpeg
+python-dotenv
